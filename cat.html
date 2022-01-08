@@ -156,7 +156,32 @@
 		right: 74%;
 		transform: rotate(-40deg);
 		top: -21%;
+		animation-name: swing-tail;
+		animation-duration: 3.5s;
+		animation-iteration-count: infinite;
+		animation-timing-function: ease-out;
 	}
+
+	@keyframes swing-tail {
+		0% {
+			transform: rotate(-50deg);
+			top: -14%;
+			right: 78%;
+		}
+		50% {
+			transform: rotate(-40deg);
+			top: -21%;
+			right: 74%;
+		}
+		100% {
+			transform: rotate(-50deg);
+			top: -14%;
+			right: 78%;
+		}
+	}
+
+
+
 	.leg {
 		position: absolute;
 		width: 14%;
