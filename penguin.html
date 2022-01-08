@@ -1,0 +1,282 @@
+<style>
+    :root {
+        --penguin-size: 50vw;
+        --penguin-skin: rgb(85, 85, 85);
+        --penguin-belly: rgb(245, 245, 245);
+        --penguin-beak: orange;
+    }
+    body {
+        background-color: rgb(182, 248, 252);
+    }
+    .penguin { 
+        position: relative;
+        margin: auto;
+        display: block;
+        margin-top: 5%;
+        width: var(--penguin-size, 300px);
+        height: var(--penguin-size, 300px);
+    }
+    .head {
+        background: var(--penguin-skin);
+        border-radius: 70% 70% 60% 60%;
+        width: 50%;
+        height: 45%;
+        position: relative;
+        top: 10%;
+        z-index: 1;
+        animation-name: head-shake;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+    @keyframes head-shake {
+        0% {
+            transform: rotate(-2deg);
+        }
+        50%{
+            transform: rotate(2deg);
+        }
+        100%{
+            transform: rotate(-2deg);
+        }
+    }
+    .body {
+        background-color: var(--penguin-skin);
+        border-radius: 60% 60% 70% 70%;
+        width: 53%;
+        height: 45%;
+        position: relative;
+        
+    }
+   
+    .belly {
+        width: 85%;
+        height: 85%;
+        background-color: var(--penguin-belly);
+        border-radius: 70% 70% 90% 90%;
+        position: relative;
+        margin: auto;
+        top: 8%;
+        z-index: 1;
+    }
+
+
+    .face {
+        width: 45%;
+        height: 70%;
+        background-color: var(--penguin-belly);
+        border-radius: 80% 170% 110% 50%;
+        position: relative;
+        margin: auto;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+    }
+    .face::before {
+        content:"";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: inherit;
+        border-radius: 170% 80% 50% 110%;
+        margin: inherit;
+        top: 0%;
+        z-index: inherit;
+        right: 90%;
+    }
+    .left-eye {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgb(53, 51, 51);
+        width: 15%;
+        height: 12%;
+        left: 25%;
+        top: 45%;
+        z-index: 2;
+    }
+    .left-eye::after {
+        content:"";
+        position: absolute;
+        z-index: inherit;
+        background-color: var(--penguin-belly);
+        border-radius: inherit;
+        top: 40%;
+        width: 120%;
+        height: 100%;
+        left: 1%;
+        animation-name: blink;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+    }
+    .right-eye {
+        border-radius: 50%;
+        position: absolute;
+        background-color: black;
+        width: 15%;
+        height: 12%;
+        right: 25%;
+        z-index: 2;
+        top: 45%;
+        /*box-shadow: 0 -6px black;*/
+    }
+    .right-eye::after {
+        content:"";
+        position: absolute;
+        z-index: inherit;
+        background-color: var(--penguin-belly);
+        border-radius: inherit;
+        top: 40%;
+        right: 1%;
+        width: 120%;
+        height: 100%;
+        animation-name: blink;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes blink {
+        0% {
+            top: 40%;
+        }
+        94%{
+            top: 40%;
+        }
+        96%{
+            top: 15%;
+        }
+        98%{
+            top: 45%;
+        }
+        100%{
+            top: 10%;
+        }
+    }
+
+    .beak {
+        background-color: var(--penguin-beak);
+        position: absolute;
+        border-radius: 90%;
+        left: 40%;
+        top: 70%;
+        width: 20%;
+        height: 10%;
+        z-index: 3;
+    }
+    .beak::after {
+        content:"";
+        background-color: inherit;
+        position: absolute;
+        width: 80%;
+        height: 120%;
+        z-index: inherit;
+        border-radius: 50%;
+        top: 30%;
+        left: 10%;
+    }
+    .blash {
+        background-color: pink;
+        border-radius: 50%;
+        position: absolute;
+        width: 16%;
+        height: 10%;
+        z-index: 2;
+        left: 15%;
+    }
+
+    .blash::after {
+        content: "";
+        background-color: inherit;
+        width: 100%;
+        height: 100%;
+        position: inherit;
+        z-index: inherit;
+        border-radius: inherit;
+        left: 330%;
+    }
+    .left-feet {
+        background-color: var(--penguin-beak);
+        position: absolute;
+        width: 18%;
+        height: 35%;
+        border-radius: 50%;
+        top: 83%;
+        left: 25%;
+        z-index: -1;
+        transform: rotate(65deg);
+    }
+    .right-feet {
+        background-color: var(--penguin-beak);
+        position: absolute;
+        width: 18%;
+        height: 35%;
+        border-radius: 50%;
+        top: 83%;
+        left: 60%;
+        z-index: -1;
+        transform: rotate(-65deg);
+    }
+    .left-hand {
+        background-color: var(--penguin-skin);
+        position: absolute;
+        width: 25%;
+        height: 60%;
+        border-radius: 50% 120% 50% 50%;
+        top: -1%;
+        left: 75%;
+        z-index: -1;
+        transform: rotate(120deg);
+    }
+    .right-hand {
+        background-color: var(--penguin-skin);
+        position: absolute;
+        width: 25%;
+        height: 60%;
+        border-radius: 120% 50% 50% 50%;
+        top: -8%;
+        right: 80%;
+        z-index: -1;
+        transform: rotate(-65deg);
+    }
+
+    .hi {
+        animation-name: wave;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes wave {
+        0% {
+            transform: rotate(-95deg);
+        }
+        50% {
+            transform: rotate(-45deg);
+        }
+        100% {
+            transform: rotate(-105deg);
+        }
+    }
+
+
+
+</style>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+</head>
+<body>
+
+    <div class="penguin">
+        <div class="head">
+            <div class="left-eye"></div>
+            <div class="right-eye"></div>
+            <div class="beak"></div>
+            <div class="face"></div>
+            <div class="blash"></div>
+        </div>
+        <div class="body">
+            <div class="belly"></div>
+            <div class="right-feet"></div>
+            <div class="left-feet"></div>
+            <div class="right-hand hi"></div>
+            <div class="left-hand"></div>
+        </div>
+    </div>
+</body>
