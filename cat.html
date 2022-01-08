@@ -1,0 +1,244 @@
+<style>
+	.cat {
+		/* border: 1px solid black; */
+		width: 20vw;
+		height: 40vw;
+		margin: auto;
+		position: relative;
+		top: 20%;
+	}
+	.head {
+		width: 100%;
+		height: 45%;
+		border-radius: 50%;
+		background-color: orange;
+		z-index: 3;
+		border: 1px solid orange;
+		border-color: C78F0D;
+		border-bottom: 1px solid orange;
+	}
+	.ear {
+		width: 35%;
+		height: 30%;
+		position: absolute;
+		bottom: 80%;
+		left: 5%;
+		border-radius: 50% 80% 0% 0%;
+		background-color: orange;
+		z-index: -1;
+		border: 1px solid orange;
+		border-color: C78F0D;
+	}
+	#right-ear {
+		left: 60%;
+		border-radius: 80% 50% 0% 0%;
+	}
+	.inner-ear {
+		width: 80%;
+		height: 80%;
+		margin: 13% 5% 0% 5%;
+		border-radius: 50%;
+		background-color: orangered;
+
+	}
+	#right-inner-ear {
+		margin: 13% 0% 0% 15%;
+	}
+	.cheek {
+		width: 25%;
+		height: 12%;
+		border-radius: 0 50% 50% 50%;
+		border: 1px solid #302F2B;
+		background-color: #F9B44C;
+		transform: rotate(130deg);
+		z-index: 3;
+		position: absolute;
+		left: 20%;
+		top: 23%;
+	}
+	#left-cheek {
+		left: 55%;
+		transform: rotate(322deg);
+	}
+	.yc-box {
+		width: 100%;
+		height: 100%;
+		transform: rotate(40deg);
+		position: relative;
+	}
+	#right-yc-box {
+		bottom: 2%;
+		right: 10%;
+		transform: rotate(42deg);
+	}
+	.yc {
+		width: 150%;
+		height: 1px;
+		z-index: 5;
+		background-color: #302F2B;
+		position: absolute;
+	}
+	#yc-1 {
+		top: 66%;
+		left: 54%;
+		transform: rotate(15deg);
+	}
+	#yc-2 {
+		top: 50%;
+		left: 57%;
+		transform: rotate(2deg);
+	}
+	#yc-3 {
+		top: 31%;
+		left: 55%;
+		transform: rotate(-12deg);
+	}
+	.eye {
+		width: 14%;
+		height: 26%;
+		background-color: whitesmoke;
+		border-radius: 50% 50% 2px 2px;
+		position: absolute;
+		left: 28%;
+		top: 7%;
+	}
+	#right-eye {
+		left: 60%;
+	}
+	.pupil {
+		width: 38%;
+		height: 37%;
+		background-color: #302F2B;
+		border-radius: 50%;
+		position: relative;
+		left: 43%;
+		top: 40%;
+	}
+	#mouth {
+		width: 10%;
+		height: 8%;
+		background-color: #302F2B;
+		border-radius: 0 0 50% 50%;
+		position: absolute;
+		top: 28.5%;
+		left: 45%;
+		z-index: 2;
+	}
+	#tounge {
+		width: 68%;
+		height: 80%;
+		position: relative;
+		margin: auto;
+		background-color: red;
+		border-radius: 0 0 50% 50%;
+	}
+	.cat-body {
+		width: 100%;
+		height: 70%;
+		border-radius: 50% 50% 18px 18px;
+		background-color: orange;
+		position: absolute;
+		bottom: 0px;
+		border: 1px solid #C78F0D;
+		border-bottom-width: 2px;
+		z-index: -1;
+	}
+
+	#tail {
+		width: 100%;
+		height: 150%;
+		color: orange;
+		font-size: 40vw;
+		position: relative;
+		right: 74%;
+		transform: rotate(-40deg);
+		top: -21%;
+	}
+	.leg {
+		position: absolute;
+		width: 14%;
+		height: 60%;
+		border: 1px solid #C78F0D;
+		border-top: none;
+		left: 30%;
+		bottom: -3%;
+		z-index: 5;
+		background-color: orange;
+	}
+	#left-leg {
+		left: 55%;
+	}
+	.finger {
+		width: 65%;
+		height: 11%;
+		border-radius: 50%;
+		background-color: orange;
+		position: absolute;
+		margin: -25%;
+		bottom: -2%;
+		border: 1px solid orange;
+		border-bottom-color: #C78F0D;
+		border-bottom-width: 2px;
+	}
+	#finger-1 {
+		border-left-color: #C78F0D;
+	}
+	#finger-2 {
+		left: 40%;
+	}
+	#finger-3 {
+		left: 80%;
+		border-right-color: #C78F0D;
+	}
+
+
+</style>
+<body>
+	<div class='cat'>
+		<div class='ear' id='left-ear'>
+			<div class='inner-ear'></div>
+		</div>
+		<div class='ear' id='right-ear'>
+			<div class='inner-ear' id='right-inner-ear'></div>
+		</div>
+		<div class='head'>
+			<div class='eye' id='left-eye'>
+				<div class='pupil'></div>
+			</div>
+			<div class='eye' id='right-eye'>
+				<div class='pupil'></div>
+			</div>
+			<div class='cheek' id='left-cheek'>
+				<div id='left-yc-box' class="yc-box">
+					<div class='yc' id='yc-1'></div>
+					<div class='yc' id='yc-2'></div>
+					<div class='yc' id='yc-3'></div>
+				</div>
+			</div>
+			<div class='cheek' id='right-cheek'>
+				<div id='right-yc-box' class='yc-box'>
+					<div class='yc' id='yc-1'></div>
+					<div class='yc' id='yc-2'></div>
+					<div class='yc' id='yc-3'></div>
+				</div>
+			</div>
+			<div id='mouth'>
+				<div id='tounge'></div>
+			</div>
+		</div>
+		<div class='cat-body'>
+			<div class='leg' id='left-leg'>
+				<div class='finger' id='finger-1'></div>
+				<div class='finger' id='finger-2'></div>
+				<div class='finger' id='finger-3'></div>
+			</div>
+			<div class='leg' id='right-leg'>
+				<div class='finger' id='finger-1'></div>
+				<div class='finger' id='finger-2'></div>
+				<div class='finger' id='finger-3'></div>
+			</div>
+			<div id='tail'>?</div>
+		</div>
+	</div>
+	
+</body>
