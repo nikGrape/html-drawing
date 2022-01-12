@@ -3,7 +3,11 @@
 		background-color: rgb(184, 247, 226);
 	}
 	.cat {
-		/* border: 1px solid black; */
+		--cat-color: orange;
+		--cat-cheeks: #F9B44C;
+		--borders: #C78F0D;
+		--cheeks: #F9B44C;
+		--pupils: #302F2B;
 		width: 20vw;
 		height: 40vw;
 		margin: auto;
@@ -14,11 +18,10 @@
 		width: 100%;
 		height: 45%;
 		border-radius: 50%;
-		background-color: orange;
 		z-index: 3;
-		border: 1px solid orange;
-		border-color: C78F0D;
-		border-bottom: 1px solid orange;
+		background-color: var(--cat-color, orange);
+		border: 1px solid var(--borders);
+		border-bottom-color: var(--cat-color, orange);
 	}
 	.ear {
 		width: 35%;
@@ -27,10 +30,9 @@
 		bottom: 80%;
 		left: 5%;
 		border-radius: 50% 80% 0% 0%;
-		background-color: orange;
 		z-index: -1;
-		border: 1px solid orange;
-		border-color: C78F0D;
+		background-color: var(--cat-color, orange);
+		border: 1px solid var(--borders);
 	}
 	#right-ear {
 		left: 60%;
@@ -51,8 +53,8 @@
 		width: 25%;
 		height: 12%;
 		border-radius: 0 50% 50% 50%;
-		border: 1px solid #302F2B;
-		background-color: #F9B44C;
+		border: 1px solid black;
+		background-color: var(--cat-cheeks, #F9B44C);
 		transform: rotate(130deg);
 		z-index: 3;
 		position: absolute;
@@ -78,7 +80,7 @@
 		width: 150%;
 		height: 1px;
 		z-index: 5;
-		background-color: #302F2B;
+		background-color: var(--pupils, #302F2B);
 		position: absolute;
 	}
 	#yc-1 {
@@ -111,7 +113,7 @@
 	.pupil {
 		width: 38%;
 		height: 37%;
-		background-color: #302F2B;
+		background-color: var(--pupils, #302F2B);
 		border-radius: 50%;
 		position: relative;
 		left: 43%;
@@ -120,7 +122,7 @@
 	#mouth {
 		width: 10%;
 		height: 8%;
-		background-color: #302F2B;
+		background-color: var(--pupils, #302F2B);
 		border-radius: 0 0 50% 50%;
 		position: absolute;
 		top: 28.5%;
@@ -139,59 +141,44 @@
 		width: 100%;
 		height: 70%;
 		border-radius: 50% 50% 18px 18px;
-		background-color: orange;
+		background-color: var(--cat-color, orange);
 		position: absolute;
 		bottom: 0px;
-		border: 1px solid #C78F0D;
+		border: 1px solid var(--borders);
 		border-bottom-width: 2px;
 		z-index: -1;
 	}
 
 	#tail {
 		width: 100%;
-		height: 150%;
-		color: orange;
+		height: 208%;
+		color: var(--cat-color, orange);
+		font-family: 'Helvetica Extra Light';
 		font-size: 40vw;
 		position: relative;
-		right: 74%;
-		transform: rotate(-40deg);
-		top: -21%;
-		animation-name: swing-tail;
-		animation-duration: 3.5s;
-		animation-iteration-count: infinite;
-		animation-timing-function: ease-out;
+		right: 48%;
+		top: -28%;
+		animation: 'swing-tail' 3.5s infinite ease-out;
 	}
 
 	@keyframes swing-tail {
-		0% {
-			transform: rotate(-50deg);
-			top: -14%;
-			right: 78%;
-		}
-		50% {
-			transform: rotate(-40deg);
-			top: -21%;
-			right: 74%;
-		}
-		100% {
-			transform: rotate(-50deg);
-			top: -14%;
-			right: 78%;
-		}
+		0% { transform: rotate(-50deg); }
+		50% { transform: rotate(-40deg); }
+		100% { transform: rotate(-50deg); }
 	}
 
 
 
 	.leg {
+		background-color: var(--cat-color, orange);
 		position: absolute;
 		width: 14%;
 		height: 60%;
-		border: 1px solid #C78F0D;
+		border: 1px solid var(--borders);
 		border-top: none;
 		left: 30%;
 		bottom: -3%;
 		z-index: 5;
-		background-color: orange;
 	}
 	#left-leg {
 		left: 55%;
@@ -200,23 +187,23 @@
 		width: 65%;
 		height: 11%;
 		border-radius: 50%;
-		background-color: orange;
+		background-color: var(--cat-color, orange);
 		position: absolute;
 		margin: -25%;
 		bottom: -2%;
-		border: 1px solid orange;
-		border-bottom-color: #C78F0D;
+		border: 1px solid var(--cat-color, orange);
+		border-bottom-color: var(--borders);
 		border-bottom-width: 2px;
 	}
 	#finger-1 {
-		border-left-color: #C78F0D;
+		border-left-color: var(--borders);
 	}
 	#finger-2 {
 		left: 40%;
 	}
 	#finger-3 {
 		left: 80%;
-		border-right-color: #C78F0D;
+		border-right-color: var(--borders);
 	}
 
 
