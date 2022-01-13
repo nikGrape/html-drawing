@@ -205,12 +205,26 @@
 	#finger-3 {
 		left: 80%;
 		border-right-color: var(--borders);
+		color: rgb(220, 194, 161);
 	}
 
 
 </style>
+<script>
+	let color_count = 1;
+	let colors = ['orange', 'black', 'darkgoldenrod', 'burlywood', 'darkorange'];
+	let cheek_colors = ['#F9B44C', '#2b2314', 'rgb(182, 149, 65)', 'rgb(220, 194, 161)', 'orange'];
+
+	function change_color(cat) {
+		cat.style.setProperty('--cat-color', colors[color_count]);
+		cat.style.setProperty('--cat-cheeks', cheek_colors[color_count]);
+		color_count++;
+		if (color_count >= colors.length)
+			color_count = 0;
+	}
+</script>
 <body>
-	<div class='cat'>
+	<div class='cat' onclick='change_color(this)'>
 		<div class='ear' id='left-ear'>
 			<div class='inner-ear'></div>
 		</div>
